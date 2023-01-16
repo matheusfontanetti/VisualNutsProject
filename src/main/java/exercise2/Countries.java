@@ -46,6 +46,11 @@ public class Countries {
         }
     }
 
+    /**
+     * Finds the common official language
+     * @param result
+     * @return commonLanguage between the countries
+     */
     private static String findsTheCommonOfficialLanguages(ArrayList<CountryDTO> result) {
         String commonLanguage = result.stream().map(l->l.getLanguages()).
                 collect(Collectors.groupingBy(la->la,Collectors.counting()))
@@ -61,7 +66,7 @@ public class Countries {
     /**
      * Finds the country with higher official languages
      * @param result
-     * @return
+     * @return country with higher official languages
      */
     private static String findsTheCountryHighterLanguages(ArrayList<CountryDTO> result) {
         int bigger = 0;
@@ -81,9 +86,9 @@ public class Countries {
     }
 
     /**
-     * Finds the country with most official languages where they officially speak de
+     * Finds the country with most official languages where speak de
      * @param result
-     * @return
+     * @return country with the most official languages where speak de
      */
     private static String findsTheCountryOfficialLanguages(ArrayList<CountryDTO> result){
 
@@ -110,7 +115,7 @@ public class Countries {
     /**
      * Returns count of all official languages
      * @param result
-     * @return
+     * @return count of all official languages
      */
     private static int  countOfficialLanguages(ArrayList<CountryDTO> result) {
         Set<String> languages = new HashSet<>();
@@ -129,7 +134,7 @@ public class Countries {
     /**
      * Returns the number of countries in the world
      * @param result
-     * @return
+     * @return number of countries in the world
      */
     private static int returnCountriesInTheWorld(ArrayList<CountryDTO> result) {
         if(!result.isEmpty() && !result.equals(null)){
